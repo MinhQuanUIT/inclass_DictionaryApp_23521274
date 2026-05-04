@@ -2,6 +2,7 @@ package com.example.dictionaryapp;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(editTextWord.getWindowToken(), 0);
 
         // Bước 3: delay nhỏ để IME có thời gian commit xong rồi mới đọc text
-        new Handler().postDelayed(() -> lookupWord(), 150);
+        new Handler(Looper.getMainLooper()).postDelayed(this::lookupWord, 150);
     }
 
     private void lookupWord() {

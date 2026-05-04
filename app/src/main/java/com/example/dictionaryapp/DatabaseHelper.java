@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME    = "dictionary.db";
-    private static final int    DB_VERSION = 1;
+    private static final int    DB_VERSION = 2;
 
     public static final String TABLE_NAME = "words";
     public static final String COL_ID     = "id";
@@ -67,7 +67,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "socket",        "An endpoint for network communication",
                 "thread",        "A unit of execution within a process",
                 "process",       "An instance of a running program",
-                "cursor",        "A pointer used to traverse database records"
+                "cursor",        "A pointer used to traverse database records",
+                "protocol",      "A set of rules for data communication"
         };
 
         for (int i = 0; i < words.length; i += 2) {
